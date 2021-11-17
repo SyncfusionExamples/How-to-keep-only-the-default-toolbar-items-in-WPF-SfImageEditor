@@ -69,6 +69,8 @@ It can be achieved by using the custom image editor and overriding the OnApplyTe
 **Output:**
 ![](Output.png)
  
+KB article - [How-to-keep-only-the-default-toolbar-items-in-WPF-SfImageEditor](https://www.syncfusion.com/kb/12194/how-to-keep-only-the-default-toolbar-items-in-wpf-sfimageeditor)
+
 **See also**
 
 [How to enable/disable the toolbar visibility](https://help.syncfusion.com/wpf/image-editor/toolbar-customization#visibility)
