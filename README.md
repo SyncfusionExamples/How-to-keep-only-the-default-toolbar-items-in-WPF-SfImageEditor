@@ -1,80 +1,43 @@
-# How-to-keep-only-the-default-toolbar-items-in-WPF-SfImageEditor
+# How to keep only the default toolbar items in WPF SfImageEditor
 
-This article explains how to disable the toolbar items except the default toolbar items such as text, shape, rotate, flip, crop and path in Syncfusion WPF SfImageEditor. 
+This repository contains sample for how to keep only the default toolbar items in the [Syncfusion WPF ImageEditor](https://help.syncfusion.com/wpf/image-editor/getting-started) control.
 
-It can be achieved by using the custom image editor and overriding the OnApplyTemplate method to disable the toolbar items as shown in the following code snippet.
+Please refer the KB through this [link](https://www.syncfusion.com/kb/12194/how-to-keep-only-the-default-toolbar-items-in-wpf-sfimageeditor).
 
-**[XAML]**
+## Syncfusion controls
 
-```
-        <local:CustomEditor x:Name="editor" ImageSource="CustomViewImage1.png">
-        </local:CustomEditor>
-```        
+This project used the following Syncfusion control(s):
+* [SfImageEditor](https://www.syncfusion.com/wpf-controls/image-editor)
 
-**[C#]**
+## Requirements to run the sample
 
-```
-    public class CustomEditor : SfImageEditor
-    {
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-            var items = this.ToolbarSettings.ToolbarItems.Count;
-            var border = this.Template.FindName("PART_HeaderToolbarPanel", this) as       Border;
-            var panel = (border.Child as Grid).Children[0] as StackPanel;
-            var browseButton = panel.Children[0] as Button;
-            var saveButton = panel.Children[1] as Button;
-            var line = panel.Children[2] as Rectangle;
-            var undoButton = panel.Children[3] as Button;
-            var redoButton = panel.Children[4] as Button;
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+* .NET Framework 3.5/4.0/4.5/4.5.1/4.6
+* .NET Core 3.1
+* .NET 5.0
 
-            var grid = (border.Child as Grid).Children[1] as Grid;
-            var stackPanel = grid.Children[0] as StackPanel;
-            var SelectButton = stackPanel.Children[0] as Button;
-            var panButton = stackPanel.Children[1] as Button;
-            var line1 = stackPanel.Children[2] as Rectangle;
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/wpf/system-requirements)
 
-            var resetButton = this.Template.FindName("PART_ResetIcon", this) as Button;
+## How to run the sample
 
-            var bottomToolbar = this.Template.FindName("PART_FooterToolbarPanel", this) as Border;
-            var bottomPanel = bottomToolbar.Child as Grid;
-            var resetZoomButton= bottomPanel.Children[0] as Button;
-            var line2 = bottomPanel.Children[1] as Rectangle;
-            var decreaseZoomRect = bottomPanel.Children[1] as Rectangle;
-            var decreaseZoomButton = bottomPanel.Children[2] as Button;
-            var slider = bottomPanel.Children[3] as Slider;
-            var increaseZoomButton = bottomPanel.Children[4] as Button;
-            var text = bottomPanel.Children[5] as TextBlock;
+1. Clone the sample and open it in Visual Studio.
 
-            browseButton.Visibility = Visibility.Collapsed;
-            saveButton.Visibility = Visibility.Collapsed;
-            line.Visibility = Visibility.Collapsed;
-            undoButton.Visibility = Visibility.Collapsed;
-            redoButton.Visibility = Visibility.Collapsed;
-            SelectButton.Visibility = Visibility.Collapsed;
-            panButton.Visibility = Visibility.Collapsed;
-            line1.Visibility = Visibility.Collapsed;
-            resetButton.Visibility = Visibility.Collapsed;
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   
+2. Register your license key in the App.cs file as demonstrated in the following code.
 
-            resetZoomButton.Visibility = Visibility.Collapsed;
-            line2.Visibility = Visibility.Collapsed;
-            decreaseZoomButton.Visibility = Visibility.Collapsed;
-            decreaseZoomButton.Visibility = Visibility.Collapsed;
-            increaseZoomButton.Visibility = Visibility.Collapsed;
-            slider.Visibility = Visibility.Collapsed;
-            text.Visibility = Visibility.Collapsed;
-        }
-    }
-```
-**Output:**
-![](Output.png)
- 
-KB article - [How-to-keep-only-the-default-toolbar-items-in-WPF-SfImageEditor](https://www.syncfusion.com/kb/12194/how-to-keep-only-the-default-toolbar-items-in-wpf-sfimageeditor)
+		public App()
+		{
+			//Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+		}
+		
+	Refer to this [link](https://help.syncfusion.com/wpf/licensing/overview) for more details.
+	
+3. Clean and build the application.
 
-**See also**
+4. Run the application.
 
-[How to enable/disable the toolbar visibility](https://help.syncfusion.com/wpf/image-editor/toolbar-customization#visibility)
+## License
 
-[How to add the additional items to the toolbar](https://help.syncfusion.com/wpf/image-editor/toolbar-customization#add-a-item)
-
-[How to customize the height of toolbar](https://help.syncfusion.com/wpf/image-editor/toolbar-customization#customization-1)
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples.
