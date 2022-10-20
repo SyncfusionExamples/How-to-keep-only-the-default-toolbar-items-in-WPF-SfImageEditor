@@ -1,6 +1,6 @@
 # How to keep only the default toolbar items in WPF SfImageEditor
 
-This repository contains sample for how to keep only the default toolbar items in the [Syncfusion WPF ImageEditor](https://help.syncfusion.com/wpf/image-editor/getting-started) control.
+This repository contains sample to keep only the default toolbar items in the [Syncfusion WPF ImageEditor](https://help.syncfusion.com/wpf/image-editor/getting-started) control.
 
 Please refer the KB through this [link](https://www.syncfusion.com/kb/12194/how-to-keep-only-the-default-toolbar-items-in-wpf-sfimageeditor).
 
